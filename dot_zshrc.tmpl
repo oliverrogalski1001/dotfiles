@@ -11,6 +11,7 @@ fi
 export PATH="/Users/oliver/.local/bin:$PATH"
 {{ else if eq .chezmoi.os "linux" }}
 export PATH="/home/oliver/bin:/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+export PATH=$PATH:/home/oliver/.spicetify
 {{ end }}
 
 # Path to your oh-my-zsh installation.
