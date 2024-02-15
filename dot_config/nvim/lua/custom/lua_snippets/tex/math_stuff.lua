@@ -47,26 +47,41 @@ return {
   s({trig=";ph", snippetType="autosnippet"},
     {t("\\phi")}
   ),
+  s({trig=";x", snippetType="autosnippet"},
+    {t("\\xi")}
+  ),
   s({trig=";m", snippetType="autosnippet"},
     {t("\\mu")}
   ),
+  s({trig=";e", snippetType="autosnippet"},
+    {t("\\varepsilon")}
+  ),
   s({trig="__", wordTrig=false, snippetType="autosnippet"},
     fmta(
-      "_{<>}<>",
-      {i(1), i(0)}
-    )
+      "_{<>}",
+      {i(1)}
+    ),
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
   ),
   s({trig="++", wordTrig=false, snippetType="autosnippet"},
     fmta(
-      "^{<>}<>",
-      {i(1), i(0)}
-    )
+      "^{<>}",
+      {i(1)}
+    ),
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
   ),
-  s({trig="sq"},
-    {t("^2")}
+  s({trig="+(%w)", wordTrig=false, regTrig=true, snippetType="autosnippet"},
+    f(function(args, snip) return
+      "^" .. snip.captures[1] end, {}),
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
   ),
-  s({trig="cb"},
-    {t("^3")}
+  s({trig="sq", snippetType="autosnippet"},
+    {t("^2")},
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
+  ),
+  s({trig="cb", snippetType="autosnippet"},
+    {t("^3")},
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
   ),
   s({trig="ss", snippetType="autosnippet"},
     fmta(
@@ -74,10 +89,21 @@ return {
       {i(1), i(2), i(0)}
     )
   ),
-  s({trig="tbf", snippetType="autosnippet"},
+  s({trig="tt", snippetType="autosnippet"},
     fmta(
-      "\\textbf{<>}<>",
+      "\\text{<>}<>",
       {i(1), i(0)}
-    )
+    ),
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
+  ),
+  s({trig="bm(%w)", regTrig=true, snippetType="autosnippet"},
+    f(function(args, snip) return
+      "\\bm{" .. snip.captures[1] .. "}" end, {}),
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
+  ),
+  s({trig="l2(%a)", regTrig=true, snippetType="autosnippet"},
+    f(function(args, snip) return
+      "\\norm{" .. "\\bm{" .. snip.captures[1] .. "}}_{2}^{2} " end, {}),
+    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
   ),
 }
