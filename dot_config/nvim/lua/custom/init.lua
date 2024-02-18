@@ -16,9 +16,16 @@
 -- imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 -- smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 -- ]]
+vim.cmd[[
+  imap <silent><expr> jj luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jj'
+  smap <silent><expr> jj luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jj'
+]]
+
 vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/lua_snippets"
 
 vim.opt.scrolloff = 5
 vim.opt.conceallevel = 2
+-- vim.opt.number = true
+vim.opt.relativenumber = true
 
 

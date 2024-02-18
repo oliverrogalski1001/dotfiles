@@ -29,33 +29,6 @@ return {
     ),
     {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
   ),
-  s({trig=";a", snippetType="autosnippet"},
-    {t("\\alpha")}
-  ),
-  s({trig=";b", snippetType="autosnippet"},
-    {t("\\beta")}
-  ),
-  s({trig=";g", snippetType="autosnippet"},
-    {t("\\gamma")}
-  ),
-  s({trig=";d", snippetType="autosnippet"},
-    {t("\\delta")}
-  ),
-  s({trig=";pi", snippetType="autosnippet"},
-    {t("\\pi")}
-  ),
-  s({trig=";ph", snippetType="autosnippet"},
-    {t("\\phi")}
-  ),
-  s({trig=";x", snippetType="autosnippet"},
-    {t("\\xi")}
-  ),
-  s({trig=";m", snippetType="autosnippet"},
-    {t("\\mu")}
-  ),
-  s({trig=";e", snippetType="autosnippet"},
-    {t("\\varepsilon")}
-  ),
   s({trig="__", wordTrig=false, snippetType="autosnippet"},
     fmta(
       "_{<>}",
@@ -68,11 +41,6 @@ return {
       "^{<>}",
       {i(1)}
     ),
-    {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
-  ),
-  s({trig="+(%w)", wordTrig=false, regTrig=true, snippetType="autosnippet"},
-    f(function(args, snip) return
-      "^" .. snip.captures[1] end, {}),
     {condition = in_mathzone}  -- `condition` option passed in the snippet `opts` table 
   ),
   s({trig="sq", snippetType="autosnippet"},
