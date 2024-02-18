@@ -59,6 +59,11 @@ alias ls="lsd"
 alias lsa="lsd -a"
 alias ll="lsd -la"
 
+{{ if eq .chezmoi.os "darwin" }}
+alias pdf="open \$(fd -e pdf -E '**/venv/**' | fzf)"
+{{ end }}
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
