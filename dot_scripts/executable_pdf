@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+selected_file=$(fd -e pdf | fzf)
+
+if [ -n "$selected_file" ]; then
+  zathura "$selected_file" &>/dev/null &
+  echo "Opening $selected_file..."
+else
+  echo "No file selected"
+fi

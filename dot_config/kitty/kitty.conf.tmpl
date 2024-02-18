@@ -1,5 +1,9 @@
-font_family      MesloLGS NF Regular
+font_family      Iosevka Term
+{{ if eq .chezmoi.os "darwin" }}
 font_size 13.0
+{{ else if eq .chezmoi.os "linux" }}
+font_size 16.0
+{{ end }}
 hide_window_decorations no
 tab_bar_edge bottom
 
@@ -17,4 +21,4 @@ macos_option_as_alt yes
 map ctrl+alt+l next_tab
 map ctrl+alt+h previous_tab
 
-include coolnight.conf
+include mocha.conf
