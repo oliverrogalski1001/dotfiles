@@ -18,8 +18,11 @@ M.general = {
       end,
       "formatting",
     },
+    -- save and quit shortcuts
     ["<leader>qq"] = { "<cmd>qa!<cr>", "quit all" },
     ["<leader>qw"] = { "<cmd>xa!<cr>", "write and quit all" },
+    -- save
+    ["<leader>s"] = { "<cmd> w <CR>", "Save file" },
   },
   v = {
     [">"] = { ">gv", "indent"},

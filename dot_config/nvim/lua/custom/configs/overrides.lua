@@ -62,11 +62,13 @@ M.luasnip = {
 
 local cmp = require "cmp"
 M.nvim_cmp = {
+  preselect = cmp.PreselectMode.None,
   mapping = {
-    -- ["<C-;>"] = cmp.mapping.confirm {
-    --   behavior = cmp.ConfirmBehavior.Insert,
-    --   select = true,
-    -- },
+    ["<CR>"] = cmp.config.disable,
+    ["<C-CR>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = false,
+    },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if require("luasnip").expand_or_jumpable() then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
