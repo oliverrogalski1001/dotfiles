@@ -42,4 +42,7 @@ return {
   s({trig=";e", snippetType="autosnippet"},
     {t("\\varepsilon")}
   ),
+  s({trig=";s", snippetType="autosnippet"},
+    {t("\\sigma")}
+  ),
 }
