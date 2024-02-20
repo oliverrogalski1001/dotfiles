@@ -38,6 +38,17 @@ local plugins = {
     opts = overrides.nvim_cmp,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false
+  },
+--{
+--  "lukas-reineke/indent-blankline.nvim",
+--  version = "3.5.3",
+--  main = "ibl",
+--  opts = {}
+--},
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -76,6 +87,9 @@ local plugins = {
       vim.g.maplocalleader = " "
       vim.g.vimtex_quickfix_open_on_warning = 0
       vim.g.vimtex_matchparen_enabled = 0
+      vim.g.vimtex_indent_enabled = 0
+      vim.g.vimtex_delim_timeout = 100
+      vim.g.vimtex_delim_stopline = 100
     end,
   },
 
