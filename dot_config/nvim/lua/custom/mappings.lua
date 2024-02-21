@@ -2,8 +2,8 @@
 local M = {}
 
 M.disabled = {
-  i = {
-      ["<CR>"] = "",
+  n = {
+      ["<leader>b"] = "",
   }
 }
 
@@ -23,6 +23,13 @@ M.general = {
     ["<leader>qw"] = { "<cmd>xa!<cr>", "write and quit all" },
     -- save
     ["<leader>s"] = { "<cmd> w <CR>", "Save file" },
+    -- new tab
+    -- ["<leader>tn"] = {"<cmd>tabnew<cr>", "new tab"},
+    -- ["<leader>tc"] = {"<cmd>tabclose<cr>", "close tab"},
+
+    -- close bd
+    ["<leader>bd"] = {"<cmd>bd<cr>", "bd"},
+
   },
   v = {
     [">"] = { ">gv", "indent"},
