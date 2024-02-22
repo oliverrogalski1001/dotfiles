@@ -22,13 +22,17 @@ M.general = {
     ["<leader>qq"] = { "<cmd>qa!<cr>", "quit all" },
     ["<leader>qw"] = { "<cmd>xa!<cr>", "write and quit all" },
     -- save
-    ["<leader>s"] = { "<cmd> w <CR>", "Save file" },
+    ["<leader>s"] = { "<cmd> w <CR>", "Save current buffer" },
+    ["<leader>as"] = { "<cmd> wa <CR>", "Save all unsaved buffers"},
     -- new tab
     -- ["<leader>tn"] = {"<cmd>tabnew<cr>", "new tab"},
     -- ["<leader>tc"] = {"<cmd>tabclose<cr>", "close tab"},
 
     -- close bd
     ["<leader>bd"] = {"<cmd>bd<cr>", "bd"},
+
+    -- chezmoi apply
+    ["<leader>ca"] = {"<cmd> !chezmoi apply <cr>", "chezmoi apply"},
 
   },
   v = {

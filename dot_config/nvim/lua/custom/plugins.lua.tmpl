@@ -83,10 +83,10 @@ local plugins = {
     lazy = false,
     init = function()
       {{ if eq .chezmoi.os "darwin" }}
-        vim.g.vimtex_view_method = "skim"
-        vim.g.vimtex_view_skim_reading_bar = 0
+      vim.g.vimtex_view_method = "skim"
+      vim.g.vimtex_view_skim_reading_bar = 0
       {{ else if eq .chezmoi.os "linux" }}
-        vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_view_method = "zathura"
       {{ end }}
       vim.g.maplocalleader = " "
       vim.g.vimtex_quickfix_open_on_warning = 0
